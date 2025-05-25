@@ -17,11 +17,11 @@ class Game extends JPanel {
     private GameStatus status;
     private boolean didLoadCherryImage = true;
 
-    private static Font FONT_M = new Font("Courier New", Font.PLAIN, 24);
-    private static Font FONT_M_ITALIC = new Font("Courier New", Font.ITALIC, 24);
-    private static Font FONT_L = new Font("Courier New", Font.PLAIN, 84);
-    private static Font FONT_XL = new Font("Courier New", Font.PLAIN, 150);
-    private static Font FONT_S = new Font("Courier New", Font.PLAIN, 16);
+    private static Font FONT_M = new Font("Monospaced", Font.PLAIN, 24);
+    private static Font FONT_M_ITALIC = new Font("Monospaced", Font.ITALIC, 24);
+    private static Font FONT_L = new Font("Monospaced", Font.PLAIN, 84);
+    private static Font FONT_XL = new Font("Monospaced", Font.PLAIN, 150);
+    private static Font FONT_S = new Font("Monospaced", Font.PLAIN, 16);
     private static int WIDTH = 760;
     private static int HEIGHT = 520;
     private static int DELAY = 50;
@@ -129,14 +129,14 @@ class Game extends JPanel {
     private void render(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
-        g2d.setColor(Color.BLACK);
+        g2d.setColor(Color.PINK);
         g2d.setFont(FONT_M);
 
         if (status == GameStatus.NOT_STARTED) {
-		drawCenteredString(g2d, "SNAKE", FONT_XL, 180);
-		drawCenteredString(g2d, "GAME", FONT_L, 260);
-		drawCenteredString(g2d, "Press any key to begin", FONT_M_ITALIC, 380);
-		drawCenteredString(g2d, "~By Sreeja ;)", FONT_S, 450);
+          drawCenteredString(g2d, "SNAKE", FONT_XL, 200);
+          drawCenteredString(g2d, "GAME", FONT_XL, 300);
+          drawCenteredString(g2d, "Press  any  key  to  begin", FONT_M_ITALIC, 330);
+
           return;
         }
 
@@ -149,9 +149,9 @@ class Game extends JPanel {
           if (didLoadCherryImage) {
             g2d.drawImage(image, cherry.getX(), cherry.getY(), 60, 60, null);
           } else {
-            g2d.setColor(Color.BLACK);
+            g2d.setColor(Color.PINK);
             g2d.fillOval(cherry.getX(), cherry.getY(), 10, 10);
-            g2d.setColor(Color.BLACK);
+            g2d.setColor(Color.PINK);
           }
         }
 
@@ -164,7 +164,7 @@ class Game extends JPanel {
             g2d.drawString("Paused", 600, 14);
         }
 
-        g2d.setColor(new Color(255, 0, 127));
+        g2d.setColor(new Color(33, 70, 199));
         g2d.fillRect(p.getX(), p.getY(), 10, 10);
 
         for(int i = 0, size = snake.getTail().size(); i < size; i++) {
@@ -173,7 +173,7 @@ class Game extends JPanel {
             g2d.fillRect(t.getX(), t.getY(), 10, 10);
         }
 
-        g2d.setColor(new Color(128, 0, 64));
+        g2d.setColor(Color.RED);
         g2d.setStroke(new BasicStroke(4));
         g2d.drawRect(20, 40, WIDTH, HEIGHT);
     }

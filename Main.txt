@@ -17,10 +17,11 @@ class Game extends JPanel {
     private GameStatus status;
     private boolean didLoadCherryImage = true;
 
-    private static Font FONT_M = new Font("Arial", Font.PLAIN, 24);
-    private static Font FONT_M_ITALIC = new Font("Arial", Font.ITALIC, 24);
-    private static Font FONT_L = new Font("Arial", Font.PLAIN, 84);
-    private static Font FONT_XL = new Font("Arial", Font.PLAIN, 150);
+    private static Font FONT_M = new Font("Monospaced", Font.PLAIN, 24);
+    private static Font FONT_M_ITALIC = new Font("Monospaced", Font.ITALIC, 24);
+    private static Font FONT_L = new Font("Monospaced", Font.PLAIN, 84);
+    private static Font FONT_XL = new Font("Monospaced", Font.PLAIN, 150);
+    private static Font FONT_S = new Font("Monospaced", Font.PLAIN, 16);
     private static int WIDTH = 760;
     private static int HEIGHT = 520;
     private static int DELAY = 50;
